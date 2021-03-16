@@ -9,8 +9,12 @@
 <ion-content [fullscreen]="true">
   <div class="container">
     <h1 style="margin-top: 35px;">KEVIN HARTONO</h1>
-    <ion-img src="../../assets/kh.jpg" style="width: 50%; margin: auto;"></ion-img>
+    <ion-img *ngIf="isDone" src="../../assets/kh.jpg" style="width: 50%; margin: auto;"></ion-img>
     <h6>C14180077</h6>
     <h6>Informatika '18</h6>
   </div>
+
+  <ion-input type="text" name="input" [(ngModel)]="numberInput" style="border:solid white" placeholder="tebak angka 0-25"></ion-input>
+  <small>kunci jawaban : {{random}}</small><br>
+  <ion-button *ngIf="!isDone" (click)="try()">ATTEMPT</ion-button>
 </ion-content>
